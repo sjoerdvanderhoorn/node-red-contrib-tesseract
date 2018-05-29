@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('tesseract',{
+        category: 'analysis',
+        color: '#e6e0f8',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "light.png",
+        label: function() {
+            return this.name||"tesseract";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="tesseract">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="tesseract">
+    <p>A node that uses Tesseract.js to perform local Optical Character Recognition (OCR).</p>
+	<h1>Input</h1>
+	<p>Pass in a local filename or a image buffer to <code>msg.payload</code>.</p>
+	<h1>Output</h1>
+	<p>Returns a string with recognized characters in <code>msg.payload</code>.</p>
+	<hr size="1" />
+	<p>Tesseract.js is on <a href="https://github.com/naptha/tesseract.js" target="_blank">GitHub</a> and <a href="http://tesseract.projectnaptha.com/" target="_blank">ProjectNaptha.com</a></p>
+</script>
