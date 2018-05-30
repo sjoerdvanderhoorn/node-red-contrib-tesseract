@@ -22,11 +22,49 @@
 </script>
 
 <script type="text/x-red" data-help-name="tesseract">
-    <p>A node that uses Tesseract.js to perform local Optical Character Recognition (OCR).</p>
-	<h1>Input</h1>
-	<p>Pass in a local filename or a image buffer to <code>msg.payload</code>.</p>
-	<h1>Output</h1>
-	<p>Returns a string with recognized characters in <code>msg.payload</code>.</p>
-	<hr size="1" />
-	<p>Tesseract.js is on <a href="https://github.com/naptha/tesseract.js" target="_blank">GitHub</a> and <a href="http://tesseract.projectnaptha.com/" target="_blank">ProjectNaptha.com</a></p>
+	<p>Tesseract.js is a pure Javascript port of the popular Tesseract OCR engine. It performs all OCR tasks locally without requiring a connection to any external service.</p>
+	<p>Tesseract was originally developed at Hewlett-Packard Laboratories Bristol and at Hewlett-Packard Co, Greeley Colorado between 1985 and 1994, with some more changes made in 1996 to port to Windows, and some C++izing in 1998. In 2005 Tesseract was open sourced by HP. Since 2006 it is developed by Google.</p>
+	<p>This <a href="https://github.com/sjoerdvanderhoorn/node-red-contrib-tesseract">Node-RED implementation of Tesseract.js</a> has been provided by Sjoerd van der Hoorn.</p>
+	<h3>Input</h3>
+	<ul>
+		<li><code>msg.payload</code> - Local filename, URL, or image buffer.</li>
+	</ul>
+	<h3>Output</h3>
+	<ul>
+		<li><code>msg.payload</code> - String with recognized text.</li>
+		<li><code>msg.tesseract</code> - Object with recognized text split out per line and word, plus confidence information.</li>
+	</ul>
+	<pre><code class="language-js">{
+  text: <span class="hljs-string">"Text from image\nSecond line"</span>,
+  confidence: <span class="hljs-number">87</span>,
+  lines: 
+  [
+    {
+      text: <span class="hljs-string">"Text from image"</span>,
+      confidence: <span class="hljs-number">93</span>,
+      words:
+      [
+        {
+          text: <span class="hljs-string">"Text"</span>,
+          confidence: <span class="hljs-number">97</span>
+        },
+        {
+          ...
+        }
+      ]
+    },
+    {
+      ...
+    }
+  ]
+}
+	</code></pre>
+	<h3>Additional information</h3>
+	<ul>
+		<li><a href="https://github.com/sjoerdvanderhoorn/node-red-contrib-tesseract" target="_blank">node-red-contrib-tesseract GitHub</a></li>
+		<li><a href="https://github.com/naptha/tesseract.js" target="_blank">Tesseract.js GitHub</a></li>
+		<li><a href="http://tesseract.projectnaptha.com/" target="_blank">Tesseract demo</a></li>
+		<li><a href="https://github.com/tesseract-ocr/tesseract" target="_blank">Original Tesseract OCR engine</a></li>
+		<li><a href="https://github.com/naptha/tessdata/tree/gh-pages/3.02" target="_blank">Language files</a></li>
+	</ul>
 </script>
