@@ -8,6 +8,7 @@ module.exports = function(RED)
 	function TesseractNode(config)
 	{
 		RED.nodes.createNode(this, config);
+		this.language = config.language;
 		var node = this;
 		node.on('input', function(msg)
 		{
@@ -54,7 +55,7 @@ module.exports = function(RED)
 				langPath: "https://github.com/naptha/tessdata/raw/gh-pages/3.02/"
 			});
 			// Perform OCR
-			Tesseract.recognize(msg.payload, {lang: "eng"}).then(function(result)
+			Tesseract.recognize(msg.payload, {lang: node.language}).then(function(result)
 			{
 				msg.payload = result.text;
 				msg.tesseract = 

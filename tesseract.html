@@ -3,7 +3,8 @@
         category: 'analysis',
         color: '#e6e0f8',
         defaults: {
-            name: {value:""}
+            name: {value:""},
+			language: {value:"eng"}
         },
         inputs:1,
         outputs:1,
@@ -19,12 +20,20 @@
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+    <div class="form-row">
+        <label for="node-input-language"><i class="icon-language"></i> Language</label>
+        <input type="text" id="node-input-language" placeholder="Language (defaults to eng)">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="tesseract">
 	<p>Tesseract.js is a pure Javascript port of the popular Tesseract OCR engine. It performs all OCR tasks locally without requiring a connection to any external service.</p>
 	<p>Tesseract was originally developed at Hewlett-Packard Laboratories Bristol and at Hewlett-Packard Co, Greeley Colorado between 1985 and 1994, with some more changes made in 1996 to port to Windows, and some C++izing in 1998. In 2005 Tesseract was open sourced by HP. Since 2006 it is developed by Google.</p>
 	<p>This <a href="https://github.com/sjoerdvanderhoorn/node-red-contrib-tesseract">Node-RED implementation of Tesseract.js</a> has been provided by Sjoerd van der Hoorn.</p>
+	<h3>Settings</h3>
+	<ul>
+		<li>Language - Code (<a href="https://github.com/naptha/tesseract.js/blob/master/docs/tesseract_lang_list.md" target="_blank">List of available language codes</a>).</li>
+	</ul>
 	<h3>Input</h3>
 	<ul>
 		<li><code>msg.payload</code> - Local filename, URL, or image buffer.</li>

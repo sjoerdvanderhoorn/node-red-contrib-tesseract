@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-tesseract",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Tesseract.js is a pure Javascript port of the popular Tesseract OCR engine.",
   "main": "tesseract.js",
   "scripts": {
