@@ -1,6 +1,7 @@
 var Tesseract = require('tesseract.js');
 var request = require('request');
 var fs = require('fs');
+var path = require("path");
 
 module.exports = function(RED)
 {
@@ -49,7 +50,8 @@ module.exports = function(RED)
 			// Initiate Tesseract.js
 			Tesseract = new Tesseract.create(
 			{
-				langPath: __dirname + "/langs/"
+				workerPath: path.join(__dirname, "/tesseract.js-overload/worker.js"),
+				langPath: "https://github.com/naptha/tessdata/raw/gh-pages/3.02/"
 			});
 			// Perform OCR
 			Tesseract.recognize(msg.payload, {lang: "eng"}).then(function(result)
