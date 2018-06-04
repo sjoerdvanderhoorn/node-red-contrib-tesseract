@@ -14,7 +14,7 @@
 	"tesseract",
 	"text recognition"
   ],
-  "homepage": "https://github.com/sjoerdvanderhoorn/node-red-contrib-tesseract"
+  "homepage": "https://github.com/sjoerdvanderhoorn/node-red-contrib-tesseract",
   "node-red": {
     "nodes": {
       "tesseract": "tesseract.js"
