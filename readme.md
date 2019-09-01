@@ -3,8 +3,6 @@ Tesseract.js is a pure Javascript port of the popular Tesseract OCR engine. It p
 
 Tesseract was originally developed at Hewlett-Packard Laboratories Bristol and at Hewlett-Packard Co, Greeley Colorado between 1985 and 1994, with some more changes made in 1996 to port to Windows, and some C++izing in 1998. In 2005 Tesseract was open sourced by HP. Since 2006 it is developed by Google.
 
-This [Node-RED implementation of Tesseract.js](https://github.com/sjoerdvanderhoorn/node-red-contrib-tesseract) has been provided by Sjoerd van der Hoorn.
-
 ![Tesseract flow](https://github.com/sjoerdvanderhoorn/node-red-contrib-tesseract/raw/master/tesseract-flow.png)
 
 This [Node-RED implementation of Tesseract.js](https://github.com/sjoerdvanderhoorn/node-red-contrib-tesseract) has been provided by Sjoerd van der Hoorn.
